@@ -1,0 +1,18 @@
+Levantamento de Requisitos:
+
+Funcionais:
+Buscar produtos
+cadastrar usuario
+alterar dados do usuario
+Calcular valor total da venda
+comprar por cartão de credito
+comprar por boleto e deposito bancario
+comprar por pix
+
+
+Não Funcionais:
+
+Usabilidade – O sistema terá uma interface simples e fácil de usar.
+Portabilidade – O sistema será acessado em todas as plataformas.
+Desempenho – O sistema terá uma interface que facilita o acesso do usuário e a agilidade nas operações.
+O sistema tera um tempo de resposta de 1ms.

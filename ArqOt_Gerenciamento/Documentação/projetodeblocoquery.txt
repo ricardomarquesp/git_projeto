@@ -1,0 +1,49 @@
+Create table FATO_VENDAS (
+cod_venda int primary key identity not null,
+cod_cliente int not null,
+cod_produto int not null,
+cod_fornecedor int not null,
+cod_transportadora int not null,
+valor_vendas decimal (10,6)not null,
+qtd_produto int not null)
+
+ALTER TABLE [dbo].[FATO_VENDAS] ADD CONSTRAINT cod_fornecedor_fk
+FOREIGN KEY (cod_fornecedor) REFERENCES [dbo].[FORNECEDOR] (cod_fornecedor)
+
+
+
+Create table FORNECEDOR (
+cod_fornecedor int primary key  not null,
+nome_fornecedor varchar (100) not null
+)
+alter table [dbo].[FORNECEDOR]
+add constraint fk_fornecedor foreign key (cod_fornecedor) references [dbo].[VENDAS] (cod_fornecedor)
+
+Create table PRODUTO (
+cod_produto int primary key identity not null,
+nome_produto varchar (100) not null,
+tipo_produto varchar (20) not null,
+qtd_produto int not null,
+valor_produto decimal (10,6)
+)
+
+
+Create table CLIENTE (
+cod_cliente int primary key identity not null,
+endereco_cod int not null,
+nome_cliente varchar (50) not null,
+sobrenome_cliente varchar (100) not null
+)
+
+Create table CLIENTE_ENDERECO (
+cod_end int primary key not null,
+Cidade varchar (50) not null,
+Bairro varchar (100) not null,
+Rua varchar (100) not null
+)
+
+
+ALTER TABLE [dbo].[CLIENTE] ADD CONSTRAINT cod_endereço_fk
+FOREIGN KEY (endereco_cod) REFERENCES [dbo].[CLIENTE_ENDERECO] (cod_end)
+
+select * from FATO_VENDAS
