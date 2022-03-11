@@ -1,0 +1,82 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>Multidimensional_INTERNET</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>/lfoWOA0kQsDkjPDyjnmJuyzJX0=16/06/2021 23:14:3216/06/2021 23:14:32</TimeStamp>
+        <ID>
+          <String>INTERNET_PBLE</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>ZGx3w/6D2rwewxWOyhmqCYIj/xo=16/06/2021 23:14:5416/06/2021 23:14:54</TimeStamp>
+        <ID>
+          <String>INTERNET_PBLEZ</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>kD0WFBvGJc3zV+wfTXsfBFdjsb0=17/06/2021 07:24:1316/06/2021 23:15:19</TimeStamp>
+        <ID>
+          <String>Dim Municipio</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UxNV0orbVh6jA6IsLt+DYpDBKX0=17/06/2021 07:39:0616/06/2021 23:21:09</TimeStamp>
+        <ID>
+          <String>Dim Escola</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>gX1prOL9sg8tQ0zkOyILcpQ27+8=16/06/2021 23:21:2216/06/2021 23:21:22</TimeStamp>
+        <ID>
+          <String>Dim Prestadora</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>EDOYZzMkeqOrq5C6KqejAotL8ls=17/06/2021 07:26:5416/06/2021 23:30:15</TimeStamp>
+        <ID>
+          <String>Dim Data</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>ESMzo+ez8FuBpOYh5Y+xaZM96JM=16/06/2021 23:43:4616/06/2021 23:15:19rErjUs9fMkSM80T6Qra2vtW6C/E=16/06/2021 23:15:1916/06/2021 23:15:19</TimeStamp>
+        <ID>
+          <String>INTERNET_PBLEZ</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>8EwEi/0r0Na6T8DUuEmr+++z6tM=16/06/2021 22:43:4216/06/2021 22:43:42</TimeStamp>
+      <ID>
+        <String>Multidimensional_INTERNET</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2021-06-17T10:39:09.953333Z</LastDeployed>
+</DeploymentSnapshot>

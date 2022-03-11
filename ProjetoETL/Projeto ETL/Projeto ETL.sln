@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Projeto ETL", "Projeto ETL.dtproj", "{3F69A398-EE62-4F79-9A79-7CBCA6B1E34E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F69A398-EE62-4F79-9A79-7CBCA6B1E34E}.Development|Default.ActiveCfg = Development
+		{3F69A398-EE62-4F79-9A79-7CBCA6B1E34E}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9C2D491E-DD65-4280-9C2E-051B235F7D5E}
+	EndGlobalSection
+EndGlobal
