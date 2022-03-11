@@ -1,0 +1,365 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1500,
+  "model": {
+    "culture": "pt-BR",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SQL/ ;INTERNET",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": ".",
+            "database": "INTERNET"
+          },
+          "authentication": null,
+          "query": null
+        },
+        "options": {},
+        "credential": {
+          "AuthenticationKind": "ServiceAccount",
+          "EncryptConnection": false
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "fato_internet",
+        "isHidden": true,
+        "columns": [
+          {
+            "name": "fato_internet_id",
+            "dataType": "int64",
+            "sourceColumn": "fato_internet_id"
+          },
+          {
+            "name": "inep_id",
+            "dataType": "int64",
+            "sourceColumn": "inep_id"
+          },
+          {
+            "name": "prestadora_id",
+            "dataType": "int64",
+            "sourceColumn": "prestadora_id"
+          },
+          {
+            "name": "data_id",
+            "dataType": "int64",
+            "sourceColumn": "data_id"
+          },
+          {
+            "name": "municipio_id",
+            "dataType": "int64",
+            "sourceColumn": "municipio_id"
+          },
+          {
+            "name": "velocidade_acesso",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "velocidade_acesso"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;INTERNET\",",
+                "    dbo_fato_internet = Source{[Schema=\"dbo\",Item=\"fato_internet\"]}[Data]",
+                "in",
+                "    dbo_fato_internet"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Velocidade Maxima",
+            "expression": "MAX(fato_internet[velocidade_acesso])",
+            "formatString": "0.00"
+          },
+          {
+            "name": "Velocidade Media",
+            "expression": "AVERAGE(fato_internet[velocidade_acesso])",
+            "formatString": "0.00"
+          }
+        ]
+      },
+      {
+        "name": "dim_data",
+        "dataCategory": "Time",
+        "columns": [
+          {
+            "name": "data_id",
+            "dataType": "int64",
+            "sourceColumn": "data_id"
+          },
+          {
+            "name": "Dia",
+            "dataType": "int64",
+            "sourceColumn": "Dia"
+          },
+          {
+            "name": "Mês",
+            "dataType": "int64",
+            "sourceColumn": "Mês"
+          },
+          {
+            "name": "Mês_Nome",
+            "dataType": "string",
+            "sourceColumn": "Mês_Nome",
+            "sortByColumn": "Mês"
+          },
+          {
+            "name": "Ano",
+            "dataType": "int64",
+            "sourceColumn": "Ano"
+          },
+          {
+            "name": "Data_Completa",
+            "dataType": "dateTime",
+            "isHidden": true,
+            "isKey": true,
+            "sourceColumn": "Data_Completa",
+            "formatString": "dd.MM.yyyy",
+            "annotations": [
+              {
+                "name": "Format",
+                "value": "<Format Format=\"DateTimeCustom\"><DateTimes><DateTime LCID=\"1046\" Group=\"ShortDate\" FormatString=\"dd.MM.yyyy\" /></DateTimes></Format>"
+              }
+            ]
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;INTERNET\",",
+                "    dbo_dim_data = Source{[Schema=\"dbo\",Item=\"dim_data\"]}[Data]",
+                "in",
+                "    dbo_dim_data"
+              ]
+            }
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Divisão por Ano",
+            "levels": [
+              {
+                "name": "Ano",
+                "ordinal": 0,
+                "column": "Ano"
+              },
+              {
+                "name": "Mês_Nome",
+                "ordinal": 1,
+                "column": "Mês_Nome"
+              },
+              {
+                "name": "Dia",
+                "ordinal": 2,
+                "column": "Dia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dim_escola",
+        "columns": [
+          {
+            "name": "inep_id",
+            "dataType": "int64",
+            "sourceColumn": "inep_id"
+          },
+          {
+            "name": "nome_escola",
+            "dataType": "string",
+            "sourceColumn": "nome_escola"
+          },
+          {
+            "name": "tipo_escola",
+            "dataType": "string",
+            "sourceColumn": "tipo_escola"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;INTERNET\",",
+                "    dbo_dim_escola = Source{[Schema=\"dbo\",Item=\"dim_escola\"]}[Data]",
+                "in",
+                "    dbo_dim_escola"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Quantidade de Escolas",
+            "expression": "COUNT(dim_escola[nome_escola])",
+            "formatString": "0"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Divisão por Tipo",
+            "levels": [
+              {
+                "name": "tipo_escola",
+                "ordinal": 0,
+                "column": "tipo_escola"
+              },
+              {
+                "name": "nome_escola",
+                "ordinal": 1,
+                "column": "nome_escola"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dim_municipio",
+        "columns": [
+          {
+            "name": "municipio_id",
+            "dataType": "int64",
+            "sourceColumn": "municipio_id"
+          },
+          {
+            "name": "municipio_name",
+            "dataType": "string",
+            "sourceColumn": "municipio_name"
+          },
+          {
+            "name": "uf_name",
+            "dataType": "string",
+            "sourceColumn": "uf_name"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;INTERNET\",",
+                "    dbo_dim_municipio = Source{[Schema=\"dbo\",Item=\"dim_municipio\"]}[Data]",
+                "in",
+                "    dbo_dim_municipio"
+              ]
+            }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Quantidade de Municipios",
+            "expression": "COUNT(dim_municipio[municipio_name])"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Divisão por Estado",
+            "levels": [
+              {
+                "name": "uf_name",
+                "ordinal": 0,
+                "column": "uf_name"
+              },
+              {
+                "name": "municipio_name",
+                "ordinal": 1,
+                "column": "municipio_name"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "dim_prestadora",
+        "columns": [
+          {
+            "name": "prestadora_id",
+            "dataType": "int64",
+            "sourceColumn": "prestadora_id"
+          },
+          {
+            "name": "prestadora",
+            "dataType": "string",
+            "sourceColumn": "prestadora"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let",
+                "    Source = #\"SQL/ ;INTERNET\",",
+                "    dbo_dim_prestadora = Source{[Schema=\"dbo\",Item=\"dim_prestadora\"]}[Data]",
+                "in",
+                "    dbo_dim_prestadora"
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "a2c7e628-3a4a-4688-aaba-7449ebd23d61",
+        "fromTable": "fato_internet",
+        "fromColumn": "data_id",
+        "toTable": "dim_data",
+        "toColumn": "data_id"
+      },
+      {
+        "name": "bf324b33-26b3-4119-8d7d-82fd418bf85b",
+        "fromTable": "fato_internet",
+        "fromColumn": "inep_id",
+        "toTable": "dim_escola",
+        "toColumn": "inep_id"
+      },
+      {
+        "name": "cb4e0706-3240-4f61-ba19-9cbd8500b189",
+        "fromTable": "fato_internet",
+        "fromColumn": "municipio_id",
+        "toTable": "dim_municipio",
+        "toColumn": "municipio_id"
+      },
+      {
+        "name": "54c6e4bb-ec27-40cf-96d7-962ca4392a23",
+        "fromTable": "fato_internet",
+        "fromColumn": "prestadora_id",
+        "toTable": "dim_prestadora",
+        "toColumn": "prestadora_id"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "600"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

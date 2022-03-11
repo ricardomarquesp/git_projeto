@@ -1,0 +1,176 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="58b72491-c6e0-4a4f-a455-03dc7f47e035" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>INTERNET_PBLEZ</ID>
+  <Name>INTERNET_PBLEZ</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>INTERNET_PBLE</DataSourceID>
+  <Schema>
+    <xs:schema id="INTERNET_PBLEZ" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="INTERNET_PBLEZ" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="f1af4542-8f4d-4362-8ec1-f5f1957d0d76">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_fato_internet" msprop:design-time-name="c9d50cca-e874-4316-8e18-d45603fabb0f" msprop:DbTableName="fato_internet" msprop:FriendlyName="fato_internet" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="fato_internet_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="e2cef359-e494-4180-8021-223592e880b9" msprop:DbColumnName="fato_internet_id" msprop:FriendlyName="fato_internet_id" type="xs:int" />
+                  <xs:element name="inep_id" msprop:design-time-name="957012c8-e305-4629-952b-ba43e50ec0d7" msprop:DbColumnName="inep_id" msprop:FriendlyName="inep_id" type="xs:int" />
+                  <xs:element name="prestadora_id" msprop:design-time-name="81aa2340-6ab6-4859-82f9-6ff533c98dd6" msprop:DbColumnName="prestadora_id" msprop:FriendlyName="prestadora_id" type="xs:int" />
+                  <xs:element name="data_id" msprop:design-time-name="484ed82c-3f09-4f45-a6c8-aeb302606d3a" msprop:DbColumnName="data_id" msprop:FriendlyName="data_id" type="xs:int" />
+                  <xs:element name="municipio_id" msprop:design-time-name="e30166a5-cbcb-42c9-856c-b99b551b497e" msprop:DbColumnName="municipio_id" msprop:FriendlyName="municipio_id" type="xs:int" />
+                  <xs:element name="velocidade_acesso" msprop:design-time-name="e0ffc109-2f5a-4da6-9239-b57863425429" msprop:DbColumnName="velocidade_acesso" msprop:FriendlyName="velocidade_acesso" type="xs:decimal" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_municipio" msprop:design-time-name="61a1978a-8794-4da6-b96d-5f151d985b66" msprop:DbTableName="dim_municipio" msprop:FriendlyName="dim_municipio" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="municipio_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="95d90fb6-07b2-4882-a157-690b7a5c250d" msprop:DbColumnName="municipio_id" msprop:FriendlyName="municipio_id" type="xs:int" />
+                  <xs:element name="municipio_name" msprop:design-time-name="cf62cc27-b550-44aa-bb71-9bc0921c56e4" msprop:DbColumnName="municipio_name" msprop:FriendlyName="municipio_name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="uf_name" msprop:design-time-name="03360ff5-c1ce-4f01-95c9-9116f697b2de" msprop:DbColumnName="uf_name" msprop:FriendlyName="uf_name">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="5" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_prestadora" msprop:design-time-name="6ed46b46-7cfd-4335-b3f3-e95577fc64e6" msprop:DbTableName="dim_prestadora" msprop:FriendlyName="dim_prestadora" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="prestadora_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:design-time-name="f61de2cd-073a-4be6-935f-e5b7f9ba5eb8" msprop:DbColumnName="prestadora_id" msprop:FriendlyName="prestadora_id" type="xs:int" />
+                  <xs:element name="prestadora" msprop:design-time-name="a06ebeea-4063-4675-8ac6-aafc92902d7e" msprop:DbColumnName="prestadora" msprop:FriendlyName="prestadora">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_data" msprop:design-time-name="fabef2e3-5398-414b-a4ac-0f09a7c7e16a" msprop:DbTableName="dim_data" msprop:FriendlyName="dim_data" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="data_id" msprop:design-time-name="daff2077-ef07-43f6-bac1-fe4099d35d62" msprop:DbColumnName="data_id" msprop:FriendlyName="data_id" type="xs:int" />
+                  <xs:element name="Dia" msprop:design-time-name="38340c0c-cb99-4a95-aeff-e657f7d9b461" msprop:DbColumnName="Dia" msprop:FriendlyName="Dia" type="xs:int" />
+                  <xs:element name="Mês" msprop:design-time-name="8b967938-5af3-4489-ba83-7b142c5ee8d3" msprop:DbColumnName="Mês" msprop:FriendlyName="Mês" type="xs:int" />
+                  <xs:element name="Mês_Nome" msprop:design-time-name="9209ca2d-74f1-488a-bca9-9c5486ef31d4" msprop:DbColumnName="Mês_Nome" msprop:FriendlyName="Mês_Nome">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="15" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Ano" msprop:design-time-name="121cc04d-6c6d-475c-961a-a4958b0daf3d" msprop:DbColumnName="Ano" msprop:FriendlyName="Ano" type="xs:int" />
+                  <xs:element name="Data_Completa" msprop:design-time-name="8012b60c-612a-48af-bbd9-7b005afb3a4b" msprop:DbColumnName="Data_Completa" msprop:FriendlyName="Data_Completa" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_dim_escola" msprop:design-time-name="5826daa4-0df3-4873-b789-869a217a3414" msprop:DbTableName="dim_escola" msprop:FriendlyName="dim_escola" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="inep_id" msprop:design-time-name="4a7eec99-a189-4e57-a937-7bf6fe7ce256" msprop:DbColumnName="inep_id" msprop:FriendlyName="inep_id" type="xs:int" />
+                  <xs:element name="nome_escola" msprop:design-time-name="ebc5b46b-7e50-4691-ab35-e03cfc515b59" msprop:DbColumnName="nome_escola" msprop:FriendlyName="nome_escola">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="250" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="tipo_escola" msprop:design-time-name="d3168eac-f31c-4ac5-a9c8-41f4e7452c2c" msprop:DbColumnName="tipo_escola" msprop:FriendlyName="tipo_escola">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="20" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_fato_internet" />
+          <xs:field xpath="fato_internet_id" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_municipio_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_municipio" />
+          <xs:field xpath="municipio_id" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_prestadora_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_prestadora" />
+          <xs:field xpath="prestadora_id" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_data_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_data" />
+          <xs:field xpath="data_id" />
+        </xs:unique>
+        <xs:unique name="dbo_dim_escola_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_dim_escola" />
+          <xs:field xpath="inep_id" />
+        </xs:unique>
+        <xs:keyref name="data_id_fk" refer="dbo_dim_data_Constraint1">
+          <xs:selector xpath=".//dbo_fato_internet" />
+          <xs:field xpath="data_id" />
+        </xs:keyref>
+        <xs:keyref name="municipio_id_fk" refer="dbo_dim_municipio_Constraint1">
+          <xs:selector xpath=".//dbo_fato_internet" />
+          <xs:field xpath="municipio_id" />
+        </xs:keyref>
+        <xs:keyref name="prestadora_id_fk" refer="dbo_dim_prestadora_Constraint1">
+          <xs:selector xpath=".//dbo_fato_internet" />
+          <xs:field xpath="prestadora_id" />
+        </xs:keyref>
+        <xs:keyref name="escola_id_fk" refer="dbo_dim_escola_Constraint1">
+          <xs:selector xpath=".//dbo_fato_internet" />
+          <xs:field xpath="inep_id" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <INTERNET_PBLEZ xmlns="" />
+  </Schema>
+</DataSourceView>
